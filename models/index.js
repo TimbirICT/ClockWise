@@ -1,5 +1,5 @@
 const User = require("./User");
-const TimeCard = require("./Blog");
+const TimeCard = require("./TimeCard");
 
 TimeCard.belongsTo(User, {
   foreignKey: "user_id",
