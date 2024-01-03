@@ -11,5 +11,5 @@ User.hasOne(TimeCard, {
 
 module.exports = {
 User,
-TimeCard
+TimeCard,
 };

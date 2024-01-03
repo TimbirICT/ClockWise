@@ -18,6 +18,21 @@ TimeCard.init({
       key: "id",
     },
   },
+  clock_in: {
+    type: DataTypes.TIME,
+    allowNull: false,
+  },
+  clock_out: {
+    type: DataTypes.TIME,
+    allowNull: false,
+  },
+  date: {
+    type: DataTypes.DATE,
+    allowNull: false,
+    validate: {
+      isDate: true,
+    },
+  },
 });
 
 module.exports = TimeCard;
