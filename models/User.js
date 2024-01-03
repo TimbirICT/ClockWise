@@ -3,8 +3,9 @@ const sequelize = require("../config/connection");
 
 class User extends Model {
   checkPassword(loginPw) {
-  return bcrypt.compareSync(loginPw, this.password);
-}}
+    return bcrypt.compareSync(loginPw, this.password);
+  }
+}
 
 User.init(
   {
@@ -33,6 +34,14 @@ User.init(
         isAlphanumeric: true,
       },
     },
+    timecard_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      references: {
+        model: "timecard",
+        key: "id",
+      },
+    },
   },
   {
     hooks: {
@@ -53,4 +62,4 @@ User.init(
   }
 );
 
-module.exports = User
+module.exports = User;
