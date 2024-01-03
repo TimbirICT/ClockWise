@@ -5,8 +5,15 @@ const exphbs = require("express-handlebars");
 const routes = require("./controllers");
 const withAuth = require("./utils/auth");
 
+<<<<<<< HEAD
 const sequelize = require("./config/connections");
 const SequelizeStore = require("connect-session-sequelize")(session.Store);
+=======
+
+const sequelize = require('./config/connections');
+const SequelizeStore = require('connect-session-sequelize')(session.Store);
+
+>>>>>>> c32a41e77cb47a715c9945eb1a370ac0369ffa3c
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -23,7 +30,7 @@ const sess = {
     db: sequelize,
   }),
 };
-
+ 
 app.use(session(sess));
 
 // Inform Express.js on which template engine to use

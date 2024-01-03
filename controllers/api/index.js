@@ -7,4 +7,4 @@ router.use('/users', userRoutes);
 router.use('/timecard', timeCardRoutes);
 router.use('/timeevent', timeEventRoutes)
 
-module.exports = router;
+module.exports = router; 
