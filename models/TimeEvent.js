@@ -3,27 +3,45 @@ const sequelize = require("../config/connections");
 
 class TimeEvent extends Model {}
 
-TimeEvent.init({
-  clock_in: {
-    type: DataTypes.TIME,
-    allowNull: false,
-  },
-  clock_out: {
-    type: DataTypes.TIME,
-    allowNull: false,
-  },
-  date: {
-    type: DataTypes.DATE,
-    allowNull: false,
-    validate: {
-      isDate: true,
+TimeEvent.init(
+  {
+    id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      primaryKey: true,
+      autoIncrement: true,
+    },
+    date: {
+      type: DataTypes.DATE,
+      allowNull: false,
+      validate: {
+        isDate: true,
+      },
+    },
+    clock_in: {
+      type: DataTypes.TIME,
+      allowNull: false,
+    },
+    clock_out: {
+      type: DataTypes.TIME,
+      allowNull: false,
+    },
+    user_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      references: {
+        model: "timecard",
+        key: "id",
+      },
     },
   },
-},
-{
+  {
     sequelize,
     timestamps: false,
     freezeTableName: true,
     underscored: true,
     modelName: "timeevent",
-  });
+  }
+);
+
+module.exports = TimeEvent;
