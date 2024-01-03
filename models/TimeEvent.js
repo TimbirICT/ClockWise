@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connections");
 
-class TimeCard extends Model {}
+class TimeEvent extends Model {}
 
-TimeCard.init(
+TimeEvent.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -11,11 +11,26 @@ TimeCard.init(
       primaryKey: true,
       autoIncrement: true,
     },
+    date: {
+      type: DataTypes.DATE,
+      allowNull: false,
+      validate: {
+        isDate: true,
+      },
+    },
+    clock_in: {
+      type: DataTypes.TIME,
+      allowNull: false,
+    },
+    clock_out: {
+      type: DataTypes.TIME,
+      allowNull: false,
+    },
     user_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
-        model: "user",
+        model: "timecard",
         key: "id",
       },
     },
@@ -25,8 +40,8 @@ TimeCard.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: "timecard",
+    modelName: "timeevent",
   }
 );
 
-module.exports = TimeCard;
+module.exports = TimeEvent;
