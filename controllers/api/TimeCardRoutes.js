@@ -19,7 +19,7 @@ router.get('/', (req, res) => {
                 attributes: ['name'],
             },
         ],
-    }),
+    })
     .then((allTimeCards) => res.json(allTimeCards))
             .catch((err) => {
                 console.log(err);
