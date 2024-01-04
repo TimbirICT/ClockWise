@@ -1,4 +1,4 @@
 
-DROP DATABASE IF EXISTS employment_db;
+DROP DATABASE IF EXISTS employee_db;
 
-CREATE DATABASE employment_db;
+CREATE DATABASE employee_db;

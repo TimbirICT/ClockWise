@@ -34,14 +34,6 @@ User.init(
         isAlphanumeric: true,
       },
     },
-    timecard_id: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      references: {
-        model: "timecard",
-        key: "id",
-      },
-    },
   },
   {
     hooks: {
