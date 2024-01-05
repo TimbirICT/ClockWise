@@ -7,7 +7,7 @@ router.get("/", async (req, res) => {
   try {
     const timeCardData = await TimeCard
       .findAll({
-        attributes: ["id", "user_id", "clock_in", "clock_out", "date"],
+        attributes: ["id", "user_id"],
         order: [["date", "DESC"]],
         include: [
           {
@@ -28,7 +28,7 @@ router.get("/:id", (req, res) => {
     where: {
       id: req.params.id,
     },
-    attributes: ["id", "user_id", "clock_in", "clock_out", "date"],
+    attributes: ["id", "user_id"],
     include: [
       {
         model: User,
