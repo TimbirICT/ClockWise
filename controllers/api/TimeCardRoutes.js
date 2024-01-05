@@ -6,18 +6,15 @@ const withAuth = require("../../utils/auth");
 router.get("/", async (req, res) => {
   try {
     const timeCardData = await TimeCard
-      .findAll
-      //     {
-      //   attributes: ["id", "user_id", "clock_in", "clock_out", "date"],
-      //   order: [["date", "DESC"]],
-      //   include: [
-      //     {
-      //       model: User,
-      //       attributes: ["name"],
-      //     },
-      //   ],
-      // }
-      ();
+      .findAll({
+        attributes: ["id", "user_id"],
+        include: [
+          {
+            model: User,
+            attributes: ["name"],
+          },
+        ],
+      });
     res.status(200).json(timeCardData);
   } catch (error) {
     res.status(500).json(error);
@@ -30,7 +27,7 @@ router.get("/:id", (req, res) => {
     where: {
       id: req.params.id,
     },
-    attributes: ["id", "user_id", "clock_in", "clock_out", "date"],
+    attributes: ["id", "user_id"],
     include: [
       {
         model: User,
