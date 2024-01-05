@@ -25,7 +25,7 @@ TimeEvent.init(
     clock_out: {
       type: DataTypes.TIME,
       allowNull: false,
-    },
+    },    
     time_card_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
