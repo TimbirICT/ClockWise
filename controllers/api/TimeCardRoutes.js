@@ -8,7 +8,6 @@ router.get("/", async (req, res) => {
     const timeCardData = await TimeCard
       .findAll({
         attributes: ["id", "user_id"],
-        order: [["date", "DESC"]],
         include: [
           {
             model: User,
