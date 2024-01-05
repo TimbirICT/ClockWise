@@ -22,39 +22,235 @@
         <a
           href="/clockin"
           class="bg-white text-blue-800 px-4 py-2 rounded-lg mt-4"
-        >Clock IN/Clock OUT</a>
-
+          >Clock IN/Clock OUT</a
+        >
       </div>
       <div class="flex flex-col items-center mt-8">
-        <a
-          href="/logout"
-          class="bg-white text-red-800 px-4 py-2 rounded-lg"
-        >Logout</a>
+        <a href="/logout" class="bg-white text-red-800 px-4 py-2 rounded-lg"
+          >Logout</a
+        >
 
-        <div class="mt-5 border border-black">
-          <h2 class="text-center">Work Week Timetable</h2>
+        <div class="mt-5">
+          
+          <table
+            class="min-w-full bg-white border border-gray-300 rounded-lg overflow-hidden"
+          >
+          
+            <thead>
+                <h2
+            class="text-center min-w-full bg-white border px-4 border-gray-300 rounded-lg overflow-hidden font-bold"
+          >
+            Work Week Timetable
+          </h2>
 
-          <table>
-            <tr>
-              <th>Monday</th>
-              <th>Tuesday</th>
-              <th>Wednesday</th>
-              <th>Thursday</th>
-              <th>Friday</th>
-            </tr>
-            <tr>
-              <td>hours</td>
-              <td>hours</td>
-              <td>hours</td>
-              <td>hours</td>
-              <td>hours</td>
-            </tr>
+              <tr>
+                <th class="py-2 px-4 bg-gray-100">Monday</th>
+                <th class="py-2 px-4 bg-gray-100">Tuesday</th>
+                <th class="py-2 px-4 bg-gray-100">Wednesday</th>
+                <th class="py-2 px-4 bg-gray-100">Thursday</th>
+                <th class="py-2 px-4 bg-gray-100">Friday</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="py-2 px-4">
+                  <form action="/submit_form" method="post">
+                    <label
+                      for="timeEntry"
+                      class="block text-sm font-medium text-gray-600"
+                      >Clocked IN:</label
+                    >
+                    <input
+                      type="time"
+                      id="timeEntry"
+                      name="userTime"
+                      class="mt-1 p-2 border rounded-md"
+                    />
+                    <input
+                      type="submit"
+                      value="Submit"
+                      class="mt-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                    />
+                  </form>
+                  <form action="/submit_form" method="post">
+                    <label
+                      for="timeEntry"
+                      class="block text-sm font-medium text-gray-600"
+                      >Clocked OUT:</label
+                    >
+                    <input
+                      type="time"
+                      id="timeEntry"
+                      name="userTime"
+                      class="mt-1 p-2 border rounded-md"
+                    />
+                    <input
+                      type="submit"
+                      value="Submit"
+                      class="mt-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                    />
+                  </form>
+                </td>
+
+                <td class="py-2 px-4">
+                  <form action="/submit_form" method="post">
+                    <label
+                      for="timeEntry"
+                      class="block text-sm font-medium text-gray-600"
+                      >Clocked IN:</label
+                    >
+                    <input
+                      type="time"
+                      id="timeEntry"
+                      name="userTime"
+                      class="mt-1 p-2 border rounded-md"
+                    />
+                    <input
+                      type="submit"
+                      value="Submit"
+                      class="mt-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                    />
+                  </form>
+                  <form action="/submit_form" method="post">
+                    <label
+                      for="timeEntry"
+                      class="block text-sm font-medium text-gray-600"
+                      >Clocked OUT:</label
+                    >
+                    <input
+                      type="time"
+                      id="timeEntry"
+                      name="userTime"
+                      class="mt-1 p-2 border rounded-md"
+                    />
+                    <input
+                      type="submit"
+                      value="Submit"
+                      class="mt-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                    />
+                  </form>
+                </td>
+
+                <td class="py-2 px-4">
+                  <form action="/submit_form" method="post">
+                    <label
+                      for="timeEntry"
+                      class="block text-sm font-medium text-gray-600"
+                      >Clocked IN:</label
+                    >
+                    <input
+                      type="time"
+                      id="timeEntry"
+                      name="userTime"
+                      class="mt-1 p-2 border rounded-md"
+                    />
+                    <input
+                      type="submit"
+                      value="Submit"
+                      class="mt-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                    />
+                  </form>
+                  <form action="/submit_form" method="post">
+                    <label
+                      for="timeEntry"
+                      class="block text-sm font-medium text-gray-600"
+                      >Clocked OUT:</label
+                    >
+                    <input
+                      type="time"
+                      id="timeEntry"
+                      name="userTime"
+                      class="mt-1 p-2 border rounded-md"
+                    />
+                    <input
+                      type="submit"
+                      value="Submit"
+                      class="mt-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                    />
+                  </form>
+                </td>
+                <td class="py-2 px-4">
+                  <form action="/submit_form" method="post">
+                    <label
+                      for="timeEntry"
+                      class="block text-sm font-medium text-gray-600"
+                      >Clocked IN:</label
+                    >
+                    <input
+                      type="time"
+                      id="timeEntry"
+                      name="userTime"
+                      class="mt-1 p-2 border rounded-md"
+                    />
+                    <input
+                      type="submit"
+                      value="Submit"
+                      class="mt-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                    />
+                  </form>
+                  <form action="/submit_form" method="post">
+                    <label
+                      for="timeEntry"
+                      class="block text-sm font-medium text-gray-600"
+                      >Clocked OUT:</label
+                    >
+                    <input
+                      type="time"
+                      id="timeEntry"
+                      name="userTime"
+                      class="mt-1 p-2 border rounded-md"
+                    />
+                    <input
+                      type="submit"
+                      value="Submit"
+                      class="mt-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                    />
+                  </form>
+                </td>
+
+                <td class="py-2 px-4">
+                  <form action="/submit_form" method="post">
+                    <label
+                      for="timeEntry"
+                      class="block text-sm font-medium text-gray-600"
+                      >Clocked IN:</label
+                    >
+                    <input
+                      type="time"
+                      id="timeEntry"
+                      name="userTime"
+                      class="mt-1 p-2 border rounded-md"
+                    />
+                    <input
+                      type="submit"
+                      value="Submit"
+                      class="mt-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                    />
+                  </form>
+                  <form action="/submit_form" method="post">
+                    <label
+                      for="timeEntry"
+                      class="block text-sm font-medium text-gray-600"
+                      >Clocked OUT:</label
+                    >
+                    <input
+                      type="time"
+                      id="timeEntry"
+                      name="userTime"
+                      class="mt-1 p-2 border rounded-md"
+                    />
+                    <input
+                      type="submit"
+                      value="Submit"
+                      class="mt-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                    />
+                  </form>
+                </td>
+              </tr>
+            </tbody>
           </table>
- 
         </div>
       </div>
-
     </div>
-
   </body>
 </html>
