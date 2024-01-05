@@ -26,7 +26,7 @@ TimeEvent.init(
       type: DataTypes.TIME,
       allowNull: false,
     },
-    timeCard_id: {
+    time_card_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {

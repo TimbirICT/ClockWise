@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { User, TimeCard } = require("../../models");
+const { User, TimeCard, TimeEvent } = require("../../models");
 const withAuth = require("../../utils/auth");
 
 // get all time cards
@@ -13,6 +13,11 @@ router.get("/", async (req, res) => {
             model: User,
             attributes: ["name"],
           },
+          {
+            model: TimeEvent,
+            attributes: ["date", "clock_in", "clock_out"], 
+            order: ["date", "DESC"]
+          },
         ],
       });
     res.status(200).json(timeCardData);
@@ -23,10 +28,7 @@ router.get("/", async (req, res) => {
 
 // get one time card by id
 router.get("/:id", (req, res) => {
-  TimeCard.findOne({
-    where: {
-      id: req.params.id,
-    },
+  TimeCard.findByPk(req.params.id, {
     attributes: ["id", "user_id"],
     include: [
       {
@@ -36,11 +38,11 @@ router.get("/:id", (req, res) => {
     ],
   })
     .then((oneTimeCard) => {
-      if (!oneTimeCard);
-      {
+      if (!oneTimeCard) { 
         res.status(404).json({ message: "Unable to find time card" });
         return;
       }
+      res.status(200).json(oneTimeCard); 
     })
     .catch((err) => {
       console.log(err);
