@@ -5,37 +5,37 @@ const timeEventData = [
     date: new Date(),
     clock_in: "09:00",
     clock_out: "15:00",
-    timeCard_id: 1,
+    time_card_id: 1,
   },
   {
     date: new Date(),
     clock_in: "09:00",
     clock_out: "15:00",
-    timeCard_id: 2,
+    time_card_id: 2,
   },
   {
     date: new Date(),
     clock_in: "09:00",
     clock_out: "15:00",
-    timeCard_id: 3,
+    time_card_id: 3,
   },
   {
     date: new Date(),
     clock_in: "09:00",
     clock_out: "15:00",
-    timeCard_id: 1,
+    time_card_id: 1,
   },
   {
     date: new Date(),
     clock_in: "09:00",
     clock_out: "15:00",
-    timeCard_id: 2,
+    time_card_id: 2,
   },
   {
     date: new Date(),
     clock_in: "09:00",
     clock_out: "15:00",
-    timeCard_id: 3,
+    time_card_id: 3,
   },
 ];
 
