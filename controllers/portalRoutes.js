@@ -1,35 +1,29 @@
 const withAuth = require("../utils/auth");
 const router = require("express").Router();
-const sequelize = require('../config/connections')
-const { User, TimeCard, TimeEvent } = require('../models');
+// const sequelize = require('../config/connections')
+const { User, TimeCard, TimeEvent } = require("../models");
 
-router.get = ('/', withAuth, (req, res) => {
-    post.findAll({
-        where: {
-            user_id: req.user.id
+router.get("/", async (req, res) => {
+  try {
+    const timecardData = await TimeCard.findAll({
+      include: [
+        {
+          model: User,
+          attributes: ["name"],
         },
-        attributes: [
-            'id',
-            'name',
-            'email',
-            'password',
-        ],
-        include: [
-            {
-                model: User,
-                attributes: ['name']
-            }
-        ]
-    })
-        .then(dbTimeCardData => {
-            const timeCards = dbTimeCardData.map(timeCard => timeCard.get({ plain: true }));
-        res.render('portal', {timeCards, logged_in: true});
-    })
-    .catch(err => {
-        console.log(err);
-        res.status(500).json(err);
+        {
+          model: TimeEvent,
+          attributes: ["date", "clock_in", "clock_out"],
+        },
+      ],
     });
+    res.render("portal", {
+        timecardData,
+        // logged_in: req.session.logged_in,
+      })
+  } catch (error) {
+    res.status(500).json(error);
+  }
 });
-
 
 module.exports = router;
