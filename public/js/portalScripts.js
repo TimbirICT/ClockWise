@@ -1,5 +1,3 @@
-// const timeEvent = document.getElementById("punch-time")
-
 // let clockedIn = true
 
 // const punchTimeFunction = async () => {
@@ -15,6 +13,8 @@
 // const renderTimeCard = async () => {
 //     const response = await fetch("/api/timecards")
 // }
+
+// js for handling clock in/clock out button on portal.handlebars
 const timeEvent = document.getElementById("punch-time");
 let clockedIn = true;
 
