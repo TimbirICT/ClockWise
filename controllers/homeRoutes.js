@@ -25,7 +25,7 @@ router.get("/", withAuth, async (req, res) => {
     );
 
     
-    res.render("main", {
+    res.render("login", {
       timeCards,
       logged_in: req.session.logged_in,
     });
@@ -34,9 +34,16 @@ router.get("/", withAuth, async (req, res) => {
   }
 });
 
+// get login page to render
 router.get('/login', (req, res) => {
-  res.render("layouts/main");
+  res.render("login");
 });
+
+// once user logged ot redirect to login page
+router.get('/logout', (req,res) => {
+  res.redirect("/")
+})
+
 
 // router.get("/timecard/:id", async (req, res) => {
 //   try {
