@@ -18,13 +18,17 @@
         <h1 class="text-6xl font-bold">ClockWise</h1>
         <p class="text-2xl mt-2">Welcome to ClockWise</p>
         <p class="text-xl mt-2">Please enter your Email and Password</p>
+
+        {{!-- form --}}
         <form class="mt-10" id="login-form">
           <div class="mb-6">
+
+                  {{!-- email label --}}
             <label
               for="email"
               class="block mb-2 text-sm font-medium text-gray-900"
             >Email</label>
-            
+                  {{!-- email input  --}}
             <input
               type="text"
               id="email-login"
@@ -34,10 +38,14 @@
             />
           </div>
           <div class="mb-6">
+
+            {{!-- password label --}}
             <label
-              for="password"
+              type="password"
               class="block mb-2 text-sm font-medium text-gray-900"
             >Password</label>
+            
+            {{!-- password input --}}
             <input
               type="password"
               id="password-login"
@@ -46,7 +54,8 @@
               required
             />
           </div>
-          <a href="/login" id="">
+
+          {{!-- submit button --}}
           <button
             type="submit"
             id="loginButton"
@@ -56,5 +65,7 @@
       </div>
     </div>
 
+  <script src="/js/login.js"></script>
+  <script src="/js/logout.js"></script>
   </body>
 </html>
