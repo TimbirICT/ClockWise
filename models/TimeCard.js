@@ -19,6 +19,7 @@ TimeCard.init(
         key: "id",
       },
     },
+  
   },
   {
     sequelize,

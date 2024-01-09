@@ -11,12 +11,12 @@ TimeCard.belongsTo(User, {
 })
 
 TimeCard.hasMany(TimeEvent, {
-  foreignKey: "time_event_id",
+  foreignKey: "time_card_id",
 });
 
-// TimeEvent.belongsTo(TimeCard, {
-//   foreignKey: "time_card_id"
-// })
+TimeEvent.belongsTo(TimeCard, {
+  foreignKey: "time_card_id"
+})
 
 module.exports = {
   User,
