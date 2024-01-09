@@ -1,3 +1,5 @@
+// js for handling logout button on portal.handlebars
+
 const logout = document.getElementById("logout");
 
 const functionHandlerLogout = async () => {

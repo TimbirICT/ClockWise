@@ -3,6 +3,8 @@ const router = require("express").Router();
 // const sequelize = require('../config/connections')
 const { User, TimeCard, TimeEvent } = require("../models");
 
+// route handler for /portal
+
 router.get("/", async (req, res) => {
   try {
     const timecardData = await TimeCard.findAll({

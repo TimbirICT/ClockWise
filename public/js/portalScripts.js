@@ -1,3 +1,7 @@
+
+// js for handling clock in/clock out button on portal.handlebars
+
+
 const timeEvent = document.getElementById("punch-time")
 
 let clockedIn = true
