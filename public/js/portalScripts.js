@@ -1,17 +1,51 @@
-const timeEvent = document.getElementById("punch-time")
+// const timeEvent = document.getElementById("punch-time")
 
-let clockedIn = true
+// let clockedIn = true
+
+// const punchTimeFunction = async () => {
+//     const response = await fetch("/api/timeevents", {
+//         method: "POST",
+//         headers: { "Content-Type": "application/json" },
+//       });
+// }
+
+// timeEvent.addEventListener('click', punchTimeFunction)
+
+
+// const renderTimeCard = async () => {
+//     const response = await fetch("/api/timecards")
+// }
+const timeEvent = document.getElementById("punch-time");
+let clockedIn = true;
 
 const punchTimeFunction = async () => {
-    const response = await fetch("/api/timeevents", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-      });
-}
+    try {
+       
+        const response = await fetch("/api/timeevents", {
+            method: "POST",
+            headers: { 
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                user_id: "name",
+                eventType: clockedIn ? "clockIn" : "clockOut",
+            }),
+        });
 
-timeEvent.addEventListener('click', punchTimeFunction)
+        if (response.ok) {
+            console.log(`Successfully ${clockedIn ? 'clocked in' : 'clocked out'}`);
+            clockedIn = !clockedIn;
+        } else {
+            console.error("Failed to record time event");
+        }
+    } catch (error) {
+        console.error("Error:", error);
+    }
+};
 
+timeEvent.addEventListener('click', punchTimeFunction);
 
-const renderTimeCard = async () => {
-    const response = await fetch("/api/timecards")
-}
+const logged_in = () => {
+    return true; 
+};
+
