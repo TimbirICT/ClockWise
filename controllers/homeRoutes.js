@@ -25,7 +25,7 @@ router.get("/", withAuth, async (req, res) => {
     );
 
     
-    res.render("main", {
+    res.render("portal", {
       timeCards,
       logged_in: req.session.logged_in,
     });
@@ -35,7 +35,7 @@ router.get("/", withAuth, async (req, res) => {
 });
 
 router.get('/login', (req, res) => {
-  res.render("layouts/main");
+  res.render("login");
 });
 
 // router.get("/timecard/:id", async (req, res) => {
