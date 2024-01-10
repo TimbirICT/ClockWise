@@ -18,7 +18,6 @@ router.get("/", withAuth, async (req, res) => {
         },
       ],
     });
-
     
     const timeCards = timeCardData.map((timeCard) =>
       timeCard.get({ plain: true })

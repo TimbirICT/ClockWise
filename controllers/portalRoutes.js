@@ -22,8 +22,8 @@ router.get("/", (req, res) => {
       ],
       where: { user_id: req.session.user_id }
     }).then((dbData) => {
-      const timeCardData = dbData.map((tc) => tc.get());
-      console.log(timeCardData[0]);
+      const timeCardData = dbData.map((tc) => tc.get({plain: true}));
+      console.log(JSON.stringify(timeCardData[0]));
       res.render("portal", timeCardData[0]);
     })
     .catch((err) => {
