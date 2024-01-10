@@ -14,7 +14,7 @@ router.get("/", withAuth, async (req, res) => {
         },
         {
           model: TimeEvent,
-          attributes: ["date", "clock_in", "clock_out"],
+          attributes: ["clock_in", "clock_out"],
         },
       ],
     });
@@ -46,49 +46,5 @@ router.get('/logout', (req,res) => {
 router.get('/timeevents', (req,res) => {
   // res.redirect("/portal")
 })
-
-// router.get("/timecard/:id", async (req, res) => {
-//   try {
-//     const dbTimeCardData = await TimeCard.findByPk(req.params.id, {
-//       include: [
-//         {
-//           model: User,
-//           attributes: ["name"],
-//         },
-//         {
-//           model: TimeEvent,
-//           attributes: ["date", "clock_in", "clock_out"],
-//         },
-//       ],
-//     });
-
-//     const timeCard = dbTimeCardData.get({ plain: true });
-//     res.render("partials/timecard", { timeCard });
-//   } catch (err) {
-//     console.log(err);
-//     res.status(500).json(err);
-//   }
-// });
-
-// router.post("/events/:timeCardId", async (req, res) => {
-//   try {
-//     const { date, clock_in, clock_out } = req.body;
-//     const timeCardId = req.params.timeCardId;
-
-//     // Create a new time event
-//     await TimeEvent.create({
-//       date,
-//       clock_in,
-//       clock_out,
-//       time_card_id: timeCardId,
-//     });
-
-    
-//     res.redirect("/");
-//   } catch (err) {
-//     console.error(err);
-//     res.status(500).json(err);
-//   }
-// });
 
 module.exports = router;

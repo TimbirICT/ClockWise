@@ -26,10 +26,7 @@ const punchTimeFunction = async () => {
                 "Content-Type": "application/json",
             },
             body: JSON.stringify({
-                date: new Date(),
-                clock_in: new Date.getTime(),
-                clock_out: new Date.getTime(),
-                time_card_id: 4,
+                time_card_id: 1,
             }),
         });
         console.log("response", response);
@@ -40,7 +37,8 @@ const punchTimeFunction = async () => {
         } else {
             console.error("Failed to record time event");
         }
-    } catch (error) {
+    } 
+    catch (error) {
         console.error("Error:", error);
     }
 };

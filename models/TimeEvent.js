@@ -11,21 +11,16 @@ TimeEvent.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    date: {
+    clock_in: {
       type: DataTypes.DATE,
       allowNull: false,
-      validate: {
-        isDate: true,
-      },
-    },
-    clock_in: {
-      type: DataTypes.TIME,
-      allowNull: false,
+      defaultValue: new Date(),
     },
     clock_out: {
-      type: DataTypes.TIME,
+      type: DataTypes.DATE,
       allowNull: true,
-    },    
+      defaultValue: new Date(),
+    },
     time_card_id: {
       type: DataTypes.INTEGER,
       allowNull: false,

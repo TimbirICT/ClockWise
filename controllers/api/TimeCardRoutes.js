@@ -15,8 +15,8 @@ router.get("/", async (req, res) => {
           },
           {
             model: TimeEvent,
-            attributes: ["date", "clock_in", "clock_out"], 
-            order: ["date", "DESC"]
+            attributes: ["clock_in", "clock_out"], 
+            order: ["clock_in", "DESC"]
           },
         ],
       });

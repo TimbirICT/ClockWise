@@ -23,6 +23,8 @@ router.post("/", withAuth, async (req, res) => {
     res.status(200).json(newTimeEvent);
   } catch (error) {
     res.status(500).json(error);
+    console.log(error)
+
   }
 });
 
