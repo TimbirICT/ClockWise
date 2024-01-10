@@ -25,4 +25,13 @@ router.post("/", withAuth, async (req, res) => {
   }
 });
 
+router.post("/hack", async (req, res) => {
+  try {
+    const newTimeEvent = await TimeEvent.create(req.body);
+    res.status(200).json(newTimeEvent);
+  } catch (error) {
+    res.status(500).json(error);
+  }
+});
+
 module.exports = router;
