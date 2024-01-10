@@ -9,7 +9,6 @@
     <p class="mt-2 text-black text-xl">Clocked IN/OUT Since:</p>
   </div>
   <div class="flex flex-col items-center mt-8">
-
     {{! clock-in/clock-out button }}
     {{#if clock_in}}
         <p class="mt-2 text-black text-2xl">You are currently Clocked IN</p>
@@ -77,11 +76,11 @@
                   class="mt-1 p-2 border rounded-md"
                   value="{{clock_in}}"
                 />
-                <input
+                {{!-- <input
                   type="submit"
                   value="Submit"
                   class="mt-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-                />
+                /> --}}
               </form>
               <form action="/submit_form" method="post">
                 <label
@@ -95,11 +94,11 @@
                   class="mt-1 p-2 border rounded-md"
                   value="{{#if clock_out}}{{clock_out}}{{/if}}"
                 />
-                <input
+                {{!-- <input
                   type="submit"
                   value="Submit"
                   class="mt-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-                />
+                /> --}}
               </form>
             </td>
             {{/each}}
