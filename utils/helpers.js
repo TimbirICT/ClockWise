@@ -10,3 +10,18 @@ module.exports = {
       return `${formattedDate} at ${formattedTime}`;
     },
   };
+
+
+  const handlebars = require('handlebars');
+  const moment = require('moment');
+
+  // helper to format dates
+handlebars.registerHelper('formatDate', function (date) {
+  return moment(date).format('YYYY-MM-DD'); // Adjust the format as needed
+});
+
+
+// helper to format time
+handlebars.registerHelper('formatTime', function (time) {
+  return moment(time).format('HH:mm'); // Adjust the format as needed
+});
