@@ -21,6 +21,7 @@ const punchTimeFunction = async () => {
 
     if (response.ok) {
       console.log('Successful');
+      document.location.reload();
       // refresh page, please
     } else {
       console.error("Failed to record time event");
