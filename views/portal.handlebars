@@ -50,16 +50,13 @@
           </h2>
 
           <tr>
-            <th class="py-2 px-4 bg-gray-100">Monday</th>
-            <th class="py-2 px-4 bg-gray-100">Tuesday</th>
-            <th class="py-2 px-4 bg-gray-100">Wednesday</th>
-            <th class="py-2 px-4 bg-gray-100">Thursday</th>
-            <th class="py-2 px-4 bg-gray-100">Friday</th>
+            {{#each timeevents}}
+            <th class="py-2 px-4 bg-gray-100">{{date}}</th>
+            {{/each}}
           </tr>
         </thead>
         <tbody>
           <tr>
-            {{user_id}}
             {{#each timeevents}}
             
             {{! day input 5 }}
