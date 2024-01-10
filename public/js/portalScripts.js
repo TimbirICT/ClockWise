@@ -20,21 +20,23 @@ let clockedIn = true;
 
 const punchTimeFunction = async () => {
     try {
-       
         const response = await fetch("/api/timeevents", {
             method: "POST",
             headers: { 
                 "Content-Type": "application/json",
             },
             body: JSON.stringify({
-                user_id: "name",
-                eventType: clockedIn ? "clockIn" : "clockOut",
+                date: new Date(),
+                clock_in: new Date.getTime(),
+                clock_out: new Date.getTime(),
+                time_card_id: 4,
             }),
         });
+        console.log("response", response);
 
         if (response.ok) {
-            console.log(`Successfully ${clockedIn ? 'clocked in' : 'clocked out'}`);
-            clockedIn = !clockedIn;
+            console.log('Successful');
+            // clock_in = !clock_in;
         } else {
             console.error("Failed to record time event");
         }
