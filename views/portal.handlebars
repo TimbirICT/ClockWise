@@ -3,7 +3,6 @@
   class="bg-blue-800 grid place-items-top h-screen border border-black rounded-lg"
 >
   <div class="text-white text-center">
-
     {{! header }}
     <h1 class="text-6xl font-bold">ClockWise</h1>
     <p class="mt-4 text-xl">Welcome to the ClockWise Employee Portal!</p>
@@ -48,159 +47,7 @@
         </thead>
         <tbody>
           <tr>
-
-            {{! day input }}
-            <td class="py-2 px-4">
-              <form action="/submit_form" method="post">
-                <label
-                  for="timeEntry"
-                  class="block text-sm font-medium text-gray-600"
-                >Clocked IN:</label>
-                <input
-                  type="time"
-                  id="timeEntry"
-                  name="userTime"
-                  class="mt-1 p-2 border rounded-md"
-                />
-                <input
-                  type="submit"
-                  value="Submit"
-                  class="mt-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-                />
-              </form>
-              <form action="/submit_form" method="post">
-                <label
-                  for="timeEntry"
-                  class="block text-sm font-medium text-gray-600"
-                >Clocked OUT:</label>
-                <input
-                  type="time"
-                  id="timeEntry"
-                  name="userTime"
-                  class="mt-1 p-2 border rounded-md"
-                />
-                <input
-                  type="submit"
-                  value="Submit"
-                  class="mt-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-                />
-              </form>
-            </td>
-
-            {{! day input 2 }}
-            <td class="py-2 px-4">
-              <form action="/submit_form" method="post">
-                <label
-                  for="timeEntry"
-                  class="block text-sm font-medium text-gray-600"
-                >Clocked IN:</label>
-                <input
-                  type="time"
-                  id="timeEntry"
-                  name="userTime"
-                  class="mt-1 p-2 border rounded-md"
-                />
-                <input
-                  type="submit"
-                  value="Submit"
-                  class="mt-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-                />
-              </form>
-              <form action="/submit_form" method="post">
-                <label
-                  for="timeEntry"
-                  class="block text-sm font-medium text-gray-600"
-                >Clocked OUT:</label>
-                <input
-                  type="time"
-                  id="timeEntry"
-                  name="userTime"
-                  class="mt-1 p-2 border rounded-md"
-                />
-                <input
-                  type="submit"
-                  value="Submit"
-                  class="mt-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-                />
-              </form>
-            </td>
-
-            {{! day input 3 }}
-            <td class="py-2 px-4">
-              <form action="/submit_form" method="post">
-                <label
-                  for="timeEntry"
-                  class="block text-sm font-medium text-gray-600"
-                >Clocked IN:</label>
-                <input
-                  type="time"
-                  id="timeEntry"
-                  name="userTime"
-                  class="mt-1 p-2 border rounded-md"
-                />
-                <input
-                  type="submit"
-                  value="Submit"
-                  class="mt-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-                />
-              </form>
-              <form action="/submit_form" method="post">
-                <label
-                  for="timeEntry"
-                  class="block text-sm font-medium text-gray-600"
-                >Clocked OUT:</label>
-                <input
-                  type="time"
-                  id="timeEntry"
-                  name="userTime"
-                  class="mt-1 p-2 border rounded-md"
-                />
-                <input
-                  type="submit"
-                  value="Submit"
-                  class="mt-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-                />
-              </form>
-            </td>
-
-            {{! day input 4 }}
-            <td class="py-2 px-4">
-              <form action="/submit_form" method="post">
-                <label
-                  for="timeEntry"
-                  class="block text-sm font-medium text-gray-600"
-                >Clocked IN:</label>
-                <input
-                  type="time"
-                  id="timeEntry"
-                  name="userTime"
-                  class="mt-1 p-2 border rounded-md"
-                />
-                <input
-                  type="submit"
-                  value="Submit"
-                  class="mt-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-                />
-              </form>
-              <form action="/submit_form" method="post">
-                <label
-                  for="timeEntry"
-                  class="block text-sm font-medium text-gray-600"
-                >Clocked OUT:</label>
-                <input
-                  type="time"
-                  id="timeEntry"
-                  name="userTime"
-                  class="mt-1 p-2 border rounded-md"
-                />
-                <input
-                  type="submit"
-                  value="Submit"
-                  class="mt-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-                />
-              </form>
-            </td>
-
+            {{#each timeevents}}
             {{! day input 5 }}
             <td class="py-2 px-4">
               <form action="/submit_form" method="post">
@@ -213,6 +60,7 @@
                   id="timeEntry"
                   name="userTime"
                   class="mt-1 p-2 border rounded-md"
+                  value="{{clock_in}}"
                 />
                 <input
                   type="submit"
@@ -230,6 +78,7 @@
                   id="timeEntry"
                   name="userTime"
                   class="mt-1 p-2 border rounded-md"
+                  value="{{#if clock_out}}{{clock_out}}{{/if}}"
                 />
                 <input
                   type="submit"
@@ -238,6 +87,7 @@
                 />
               </form>
             </td>
+            {{/each}}
           </tr>
         </tbody>
       </table>

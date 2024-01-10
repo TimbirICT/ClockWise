@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { User } = require("../../models");
+const { User, TimeCard } = require("../../models");
 
 router.get("/", async (req, res) => {
   try {
@@ -15,6 +15,7 @@ router.post("/", async (req, res) => {
   try {
     const userData = await User.create(req.body);
     console.log(userData)
+    TimeCard.create({user_id: userData.dataValues.id})
     res.status(200).json(userData);
     // req.session.save(() => {
     //   req.session.user_id = userData.id;
