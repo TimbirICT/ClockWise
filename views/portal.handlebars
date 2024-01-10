@@ -51,7 +51,7 @@
 
           <tr>
             {{#each timeevents}}
-            <th class="py-2 px-4 bg-gray-100">{{date}}</th>
+            <th class="py-2 px-4 bg-gray-100">{{formatDate date}}</th>
             {{/each}}
           </tr>
         </thead>
@@ -71,7 +71,7 @@
                   id="timeEntry"
                   name="userTime"
                   class="mt-1 p-2 border rounded-md"
-                  value="{{clock_in}}"
+                  value="{{formatTime clock_in}}"
                 />
                 {{!-- <input
                   type="submit"
@@ -89,7 +89,7 @@
                   id="timeEntry"
                   name="userTime"
                   class="mt-1 p-2 border rounded-md"
-                  value="{{#if clock_out}}{{clock_out}}{{/if}}"
+                  value="{{#if clock_out}}{{formatTime clock_out}}{{/if}}"
                 />
                 {{!-- <input
                   type="submit"
@@ -107,3 +107,5 @@
   </div>
 </div>
 <script src="/js/portalScripts.js"></script>
+<!-- Include Moment.js from CDN -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
