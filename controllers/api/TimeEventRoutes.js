@@ -14,6 +14,7 @@ router.get("/", async (req, res) => {
 
 // create new time event
 router.post("/", withAuth, async (req, res) => {
+  console.log(req.body);
   try {
     const newTimeEvent = await TimeEvent.create({
       ...req.body,
