@@ -44,6 +44,9 @@ router.get('/logout', (req,res) => {
   res.redirect("/")
 })
 
+router.get('/timeevents', (req,res) => {
+  // res.redirect("/portal")
+})
 
 // router.get("/timecard/:id", async (req, res) => {
 //   try {
