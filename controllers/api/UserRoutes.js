@@ -10,24 +10,6 @@ router.get("/", async (req, res) => {
   }
 });
 
-// router.post("/", async (req, res) => {
-//   console.log(req.body);
-//   try {
-//     const userData = await User.create(req.body);
-//     console.log(userData)
-//     TimeCard.create({user_id: userData.dataValues.id})
-//     res.status(200).json(userData);
-//     // req.session.save(() => {
-//     //   req.session.user_id = userData.id;
-//     //   req.session.logged_in = true;
-//     // }
-//     // );
-//   } catch (err) {
-//     res.status(400).json(err);
-//   }
-// });
-
-
 router.post("/signup", async (req, res) => {
   try {
     const newUser = new User();
@@ -36,13 +18,15 @@ router.post("/signup", async (req, res) => {
     newUser.password = req.body.password;
 
     const userData = await newUser.save();
+    TimeCard.create({user_id: userData.dataValues.id});
+
+    req.session.user_id = userData.dataValues.id;
+    req.session.logged_in = true;
 
     req.session.save(() => {
-      req.session.user_id = userData.id;
-      req.session.logged_in = true;
-
       res.status(200).json(userData);
     });
+
   } catch (error) {
     console.log(error);
     res.status(500).json(error);
@@ -84,11 +68,11 @@ router.post("/login", async (req, res) => {
 router.post("/logout", (req, res) => {
   if (req.session.logged_in) {
     req.session.destroy(() => {
-      res.status(200).json({message: "You have successfully logged out"}).end();
+      res.status(200).json({message: "You have successfully logged out"});
       // res.redirect('/login')
     });
   } else {
-    res.status(404).json({message: "There has been an issue"}).end();
+    res.status(404).json({message: "There has been an issue"});
   }
 });
 

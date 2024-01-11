@@ -25,3 +25,14 @@ handlebars.registerHelper('formatDate', function (date) {
 handlebars.registerHelper('formatTime', function (time) {
   return moment(time).format('HH:mm'); // Adjust the format as needed
 });
+
+//helper for clocked_in
+handlebars.registerHelper('ifClockedIn', (value, whichCheck) => {
+  if (whichCheck == "in")
+  {
+    return value == false || value == "false" && value != "done";
+  }
+  else {
+    return value == true || value == "true" && value != "done";
+  }
+});

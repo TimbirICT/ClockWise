@@ -1,6 +1,7 @@
 const timeEvent = document.getElementById("punch-time");
 
-const punchTimeFunction = async () => {
+const punchTimeFunction = async (event) => {
+  event.preventDefault();
   try {
     const currentDate = moment().format();
     const currenttime = moment(currentDate).format("HH:mm")
@@ -22,6 +23,7 @@ const punchTimeFunction = async () => {
     if (response.ok) {
       console.log('Successful');
       document.location.reload();
+      
       // refresh page, please
     } else {
       console.error("Failed to record time event");

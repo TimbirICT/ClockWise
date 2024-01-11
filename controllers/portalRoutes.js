@@ -21,18 +21,21 @@ router.get("/", (req, res) => {
           order: ["date", "DESC"]
         },
       ],
-      // where: { user_id: req.session.user_id }
+      where: { user_id: req.session.user_id }
     }).then(async (dbData) => {
       const timeCardData = dbData.map((tc) => tc.get({plain: true}));
       
-      const currentDateEvent = await GetCurrentTimeEventByTimeCardId(timeCardData[0].user_id);
+      const currentDateEvent = await GetCurrentTimeEventByTimeCardId(timeCardData[0].id);
       console.log(timeCardData[0]);
       timeCardData[0].clock_in = DetermineIfClockedInOrOut(currentDateEvent);
       currentDateEvent == null ? false : true;
       res.render("portal", timeCardData[0]);
     })
     .catch((err) => {
-      res.status(500).json("here is the error");
+      
+      console.log(err);
+      //cheat time
+      res.redirect("/login")
     });
 });
 
