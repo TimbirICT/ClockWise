@@ -35,7 +35,7 @@ router.get("/", withAuth, async (req, res) => {
 
 router.get("/signup", (req, res) => {
   if (req.session.logged_in) {
-    res.redirect("/login");
+    res.redirect("/portal"); /*where to redirect TODO*/
     return;
   }
   res.render("signup");
@@ -49,7 +49,7 @@ router.get('/login', (req, res) => {
 
 // once user logged ot redirect to login page
 router.get('/logout', (req,res) => {
-  res.redirect("/")
+  res.redirect("/login")
 })
 
 router.get('/timeevents', (req,res) => {
