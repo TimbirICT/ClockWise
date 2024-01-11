@@ -14,7 +14,7 @@ const loginFormHandler = async (event) => {
       });
   
       if (response.ok) {
-        document.location.replace("/portal");
+        setTimeout(() => {document.location.replace("/portal");}, 500);
       } else {
         alert("Failed to log in.");
       }

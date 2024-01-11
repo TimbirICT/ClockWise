@@ -14,7 +14,7 @@ const signupFormHandler = async (event) => {
       console.log(name, email, password);
   
       if (response.ok) {
-        document.location.replace("/portal"); /* redirect to portal TODO */
+        setTimeout(() => {document.location.replace("/portal");}, 500);
       } else {
         alert("Failed to sign up.");
       }
