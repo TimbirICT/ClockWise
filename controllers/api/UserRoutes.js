@@ -68,11 +68,11 @@ router.post("/login", async (req, res) => {
 router.post("/logout", (req, res) => {
   if (req.session.logged_in) {
     req.session.destroy(() => {
-      res.status(200).json({message: "You have successfully logged out"}).end();
+      res.status(200).json({message: "You have successfully logged out"});
       // res.redirect('/login')
     });
   } else {
-    res.status(404).json({message: "There has been an issue"}).end();
+    res.status(404).json({message: "There has been an issue"});
   }
 });
 

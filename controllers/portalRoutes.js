@@ -32,8 +32,10 @@ router.get("/", (req, res) => {
       res.render("portal", timeCardData[0]);
     })
     .catch((err) => {
+      
       console.log(err);
-      res.status(500).json("here is the error");
+      //cheat time
+      res.redirect("/login")
     });
 });
 
