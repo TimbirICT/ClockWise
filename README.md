@@ -12,7 +12,7 @@ As an employee, I want to be able to clock in and out so that I can keep track o
 - [Questions](#questions)
 
 ## Installation
-Download the application from Heroku and Insomnia, run npm i to install dependencies (bcrypt, connect-session-sequelize, dotenv, express, express-handlebard, express-session, handlebars, moment, mysql2, and sequelize). 
+Download the application from Heroku and Insomnia, run npm i to install dependencies (bcrypt, connect-session-sequelize, dotenv, express, express-handlebars, express-session, handlebars, moment, mysql2, and sequelize). 
 
 ## Usage
 Login with your employee ID number and password. From there, you will be able to clock in or out, as well as review your time card. 
