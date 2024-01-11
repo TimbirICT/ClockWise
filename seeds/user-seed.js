@@ -11,7 +11,7 @@ const userData = [
   {
     name: "Timbir Middlebrooks",
     email: "timbir@email.com",
-    password: "$2b$10$9flml..pBjzo49kHodATCecLu/0uJnBcaXSB2TEsCvCIV71gTh5Lq",
+    password: "password12345",
   },
   {
     name: "Travis Shanhun",
