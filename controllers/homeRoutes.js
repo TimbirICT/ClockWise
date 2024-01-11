@@ -41,6 +41,10 @@ router.get('/login', (req, res) => {
 // once user logged ot redirect to login page
 router.get('/logout', (req,res) => {
   res.redirect("/login")
-})
+});
+
+router.get('/timeevents', (req,res) => {
+  res.redirect("/portal")
+});
 
 module.exports = router;
