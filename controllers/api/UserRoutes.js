@@ -28,6 +28,27 @@ router.post("/", async (req, res) => {
 });
 
 
+router.post("/signup", async (req, res) => {
+  try {
+    const newUser = new User();
+    newUser.name = req.body.name;
+    newUser.email = req.body.email;
+    newUser.password = req.body.password;
+
+    const userData = await newUser.save();
+
+    req.session.save(() => {
+      req.session.user_id = userData.id;
+      req.session.logged_in = true;
+
+      res.status(200).json(userData);
+    });
+  } catch (error) {
+    console.log(error);
+    res.status(500).json(error);
+  }
+});
+
 router.post("/login", async (req, res) => {
   try {
     const userData = await User.findOne({ where: { email: req.body.email } });

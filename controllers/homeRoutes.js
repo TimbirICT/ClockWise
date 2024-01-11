@@ -33,6 +33,15 @@ router.get("/", withAuth, async (req, res) => {
   }
 });
 
+router.get("/signup", (req, res) => {
+  if (req.session.logged_in) {
+    res.redirect("/login");
+    return;
+  }
+  res.render("signup");
+});
+
+
 // get login page to render
 router.get('/login', (req, res) => {
   res.render("login");
